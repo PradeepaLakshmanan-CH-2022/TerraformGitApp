@@ -26,7 +26,7 @@ resource "aws_codebuild_project" "tf-plan" {
 
 resource "aws_codepipeline" "cicd_pipeline" {
 
-    name = "tf-cicd-pipeline"
+    name = "tf-cicd"
     role_arn = aws_iam_role.terraform-codepipeline-role.arn
 
     artifact_store {
@@ -44,7 +44,7 @@ resource "aws_codepipeline" "cicd_pipeline" {
             version = "1"
             output_artifacts = ["tf-code"]
             configuration = {
-                FullRepositoryId = "PradeepaLakshmanan-CH-2022/TerraformGitApp"
+                FullRepositoryId = "PradeepaLakshmanan-CH-2022/GitPipeline"
                 BranchName   = "master"
                 ConnectionArn = var.codestar_connector_credentials
                 OutputArtifactFormat = "CODE_ZIP"
