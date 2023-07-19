@@ -26,7 +26,7 @@ resource "aws_codebuild_project" "tf-plan" {
 
 resource "aws_codepipeline" "cicd_pipeline" {
 
-    name = "tf-cicd"
+    name = "tf-cicd-pipeline"
     role_arn = aws_iam_role.terraform-codepipeline-role.arn
 
     artifact_store {
