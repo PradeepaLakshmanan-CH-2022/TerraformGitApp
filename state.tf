@@ -1,6 +1,6 @@
 terraform{
     backend "s3" {
-        bucket = "mybucketforconsole"
+        bucket = "myterraformbucketinaws"
         encrypt = true
         key = "terraform.tfstate"
         region = "us-east-1"
